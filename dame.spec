@@ -16,6 +16,11 @@ BuildRoot:	/var/tmp/dame-root
 Dame lets you play at draughts in an X window. It comes with checkers, a
 tricky opponent, and simplech, an even harder to beat opponent.
 
+%description -l pl
+Dziêki dame mo¿na graæ w warcaby w X Window. W pakiecie jest szachownica,
+sprytny przeciwnik oraz simplech -- przeciwnik, którego jeszcze trudniej
+pokonaæ.
+
 %description -l de
 Dame zeichnet ein Damebrett in ein X Fenster. Es kommt mit checkers, einem
 leichten, und simplech, einem schweren Gegner.
