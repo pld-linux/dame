@@ -9,6 +9,7 @@ Release:	3
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	http://super.tacheles.de/~girbal/dame/%{name}-%{version}.tar.gz
+# Source0-md5:	80b3f49a32a34719e5448fa99086c739
 Patch0:		%{name}-am_fix.patch
 URL:		http://super.tacheles.de/~girbal/dame/
 BuildRequires:	autoconf
