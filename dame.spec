@@ -5,7 +5,7 @@ Summary(fi):	Tammi peli
 Summary(pl):	Warcaby
 Name:		dame
 Version:	0.27
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	http://super.tacheles.de/~girbal/dame/%{name}-%{version}.tar.gz
