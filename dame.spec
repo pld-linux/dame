@@ -45,7 +45,7 @@ jeszcze trudniej pokonaæ.
 %build
 rm -f missing acinclude.m4
 gettextize --copy --force
-libtoolize --copy --force
+%{__libtoolize}
 aclocal -I macros
 %{__autoconf}
 %{__automake}
