@@ -10,7 +10,7 @@ Group:		X11/Games/Strategy
 Source:		http://super.tacheles.de/~girbal/dame/dame-%{ver}.tar.gz
 Requires:	gnome-libs >= 0.30
 URL:		http://super.tacheles.de/~girbal/dame/
-BuildRoot:	/var/tmp/dame-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Dame lets you play at draughts in an X window. It comes with checkers, a
