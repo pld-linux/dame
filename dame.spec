@@ -41,7 +41,7 @@ CFLAGS="$RPM_OPT_FLAGS" \
 ./configure \
 	--prefix=%{_prefix} \
 	--bindir=%{bindir}
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
