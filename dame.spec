@@ -5,25 +5,29 @@ Summary(fi):	Tammi peli
 Name:		dame
 Version:	0.27
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		X11/Games/Strategy
-Source:		http://super.tacheles.de/~girbal/dame/dame-%{version}.tar.gz
+Group(pl):	X11/Gry/Strategiczne
+Source0:	http://super.tacheles.de/~girbal/dame/%{name}-%{version}.tar.gz
 Requires:	gnome-libs >= 0.30
 URL:		http://super.tacheles.de/~girbal/dame/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
+
 %description
-Dame lets you play at draughts in an X window. It comes with checkers, a
-tricky opponent, and simplech, an even harder to beat opponent.
+Dame lets you play at draughts in an X window. It comes with checkers,
+a tricky opponent, and simplech, an even harder to beat opponent.
 
 %description -l pl
-Dziêki dame mo¿na graæ w warcaby w X Window. W pakiecie jest szachownica,
-sprytny przeciwnik oraz simplech -- przeciwnik, którego jeszcze trudniej
-pokonaæ.
+Dziêki dame mo¿na graæ w warcaby w X Window. W pakiecie jest
+szachownica, sprytny przeciwnik oraz simplech -- przeciwnik, którego
+jeszcze trudniej pokonaæ.
 
 %description -l de
-Dame zeichnet ein Damebrett in ein X Fenster. Es kommt mit checkers, einem
-leichten, und simplech, einem schweren Gegner.
+Dame zeichnet ein Damebrett in ein X Fenster. Es kommt mit checkers,
+einem leichten, und simplech, einem schweren Gegner.
 
 %description -l fr
 Dame vous presente un damier graphique pour jouer aux dames contre
@@ -35,13 +39,13 @@ l'ordinateur - en personne de checkers ou simplech.
 %build
 CFLAGS="$RPM_OPT_FLAGS" \
 ./configure \
-	--prefix=%{prefix} \
+	--prefix=%{_prefix} \
 	--bindir=%{bindir}
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix=$RPM_BUILD_ROOT%{prefix} bindir=$RPM_BUILD_ROOT%{bindir} install
+make prefix=$RPM_BUILD_ROOT%{_prefix} bindir=$RPM_BUILD_ROOT%{bindir} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,13 +53,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README COPYING ChangeLog dame.lsm
-%{prefix}/games/dame
-%{prefix}/games/checkers
-%{prefix}/games/simplech
-%{prefix}/man/man6/dame.6
-%{prefix}/share/pixmaps/dame.png
-%dir %{prefix}/share/pixmaps/dame
-%{prefix}/share/pixmaps/dame/*.png
-%{prefix}/share/apps/Games/dame.desktop
-%{prefix}/share/locale/de/LC_MESSAGES/dame.mo
-%{prefix}/share/locale/fr/LC_MESSAGES/dame.mo
+%{_prefix}/games/dame
+%{_prefix}/games/checkers
+%{_prefix}/games/simplech
+%{_mandir}/man6/dame.6
+%{_datadir}/pixmaps/dame.png
+%dir %{_datadir}/pixmaps/dame
+%{_datadir}/pixmaps/dame/*.png
+%{_datadir}/apps/Games/dame.desktop
+%{_datadir}/locale/de/LC_MESSAGES/dame.mo
+%{_datadir}/locale/fr/LC_MESSAGES/dame.mo
