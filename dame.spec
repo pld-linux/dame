@@ -1,13 +1,15 @@
 Summary:	Dame lets you play checkers ala point and click
-Summary(de):	Spielen Sie Dame.
-Summary(fr):	Jouez aux dames.
+Summary(de):	Spielen Sie Dame
+Summary(fr):	Jouez aux dames
 Summary(fi):	Tammi peli
+Summary(pl):	Warcaby
 Name:		dame
 Version:	0.27
 Release:	1
 License:	GPL
-Group:		X11/Games/Strategy
-Group(pl):	X11/Gry/Strategiczne
+Group:		X11/Applications/Games/Strategy
+Group(de):	X11/Applikationen/Spiele/Strategie
+Group(pl):	X11/Aplikacje/Gry/Strategiczne
 Source0:	http://super.tacheles.de/~girbal/dame/%{name}-%{version}.tar.gz
 Requires:	gnome-libs >= 0.30
 URL:		http://super.tacheles.de/~girbal/dame/
@@ -20,11 +22,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Dame lets you play at draughts in an X window. It comes with checkers,
 a tricky opponent, and simplech, an even harder to beat opponent.
 
-%description -l pl
-Dziêki dame mo¿na graæ w warcaby w X Window. W pakiecie jest
-szachownica, sprytny przeciwnik oraz simplech -- przeciwnik, którego
-jeszcze trudniej pokonaæ.
-
 %description -l de
 Dame zeichnet ein Damebrett in ein X Fenster. Es kommt mit checkers,
 einem leichten, und simplech, einem schweren Gegner.
@@ -33,11 +30,16 @@ einem leichten, und simplech, einem schweren Gegner.
 Dame vous presente un damier graphique pour jouer aux dames contre
 l'ordinateur - en personne de checkers ou simplech.
 
+%description -l pl
+Dziêki dame mo¿na graæ w warcaby w X Window. W pakiecie jest
+szachownica, sprytny przeciwnik oraz simplech -- przeciwnik, którego
+jeszcze trudniej pokonaæ.
+
 %prep
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" \
+CFLAGS="%{rpmcflags}" \
 ./configure \
 	--prefix=%{_prefix} \
 	--bindir=%{bindir}
@@ -56,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/games/dame
 %{_prefix}/games/checkers
 %{_prefix}/games/simplech
-%{_mandir}/man6/dame.6
+%{_mandir}/man6/dame.6*
 %{_pixmapsdir}/dame.png
 %dir %{_datadir}/pixmaps/dame
 %{_pixmapsdir}/dame/*.png
