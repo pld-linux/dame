@@ -59,17 +59,15 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	sysdir=%{_applnkdir}/Games/Board
 
-gzip -9nf AUTHORS README ChangeLog dame.lsm
-
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
-%defattr(644,root,root,755)
-%doc *.gz
-%attr(755,root,root) %{_bindir}/*
+%files -f %{name}.lang 
+%defattr(644,root,root,755) 
+%doc AUTHORS README ChangeLog dame.lsm
+%attr(755,root,root) %{_bindir}/* 
 %{_mandir}/man6/dame.6*
-%{_pixmapsdir}/*
+%{_pixmapsdir}/* 
 %{_applnkdir}/Games/Board/dame.desktop
