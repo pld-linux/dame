@@ -5,11 +5,11 @@ Summary(fi):	Tammi peli
 Summary(pl):	Warcaby
 Name:		dame
 Version:	0.27
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	http://super.tacheles.de/~girbal/dame/%{name}-%{version}.tar.gz
-PAtch0:		%{name}-am_fix.patch
+Patch0:		%{name}-am_fix.patch
 URL:		http://super.tacheles.de/~girbal/dame/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -59,6 +59,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	sysdir=%{_applnkdir}/Games/Board
 
+gzip -9nf AUTHORS README ChangeLog dame.lsm
+
 %find_lang %{name}
 
 %clean
@@ -66,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README ChangeLog dame.lsm
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man6/dame.6*
 %{_pixmapsdir}/*
