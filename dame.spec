@@ -8,8 +8,6 @@ Version:	0.27
 Release:	2
 License:	GPL
 Group:		X11/Applications/Games/Strategy
-Group(de):	X11/Applikationen/Spiele/Strategie
-Group(pl):	X11/Aplikacje/Gry/Strategiczne
 Source0:	http://super.tacheles.de/~girbal/dame/%{name}-%{version}.tar.gz
 PAtch0:		%{name}-am_fix.patch
 URL:		http://super.tacheles.de/~girbal/dame/
