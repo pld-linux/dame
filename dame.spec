@@ -67,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS README ChangeLog dame.lsm
-%{_bindir}/*
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man6/dame.6*
 %{_pixmapsdir}/*
 %{_applnkdir}/Games/Board/dame.desktop
