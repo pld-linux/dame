@@ -57,9 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/games/checkers
 %{_prefix}/games/simplech
 %{_mandir}/man6/dame.6
-%{_datadir}/pixmaps/dame.png
+%{_pixmapsdir}/dame.png
 %dir %{_datadir}/pixmaps/dame
-%{_datadir}/pixmaps/dame/*.png
+%{_pixmapsdir}/dame/*.png
 %{_datadir}/apps/Games/dame.desktop
 %{_datadir}/locale/de/LC_MESSAGES/dame.mo
 %{_datadir}/locale/fr/LC_MESSAGES/dame.mo
