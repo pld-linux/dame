@@ -11,8 +11,13 @@ Group:		X11/Applications/Games/Strategy
 Group(de):	X11/Applikationen/Spiele/Strategie
 Group(pl):	X11/Aplikacje/Gry/Strategiczne
 Source0:	http://super.tacheles.de/~girbal/dame/%{name}-%{version}.tar.gz
-Requires:	gnome-libs >= 0.30
+PAtch0:		%{name}-am_fix.patch
 URL:		http://super.tacheles.de/~girbal/dame/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gettext-devel
+BuildRequires:	gnome-libs-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -37,31 +42,34 @@ jeszcze trudniej pokonaæ.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-CFLAGS="%{rpmcflags}" \
-./configure \
-	--prefix=%{_prefix} \
-	--bindir=%{_bindir}
+rm -f missing acinclude.m4
+gettextize --copy --force
+libtoolize --copy --force
+aclocal -I macros
+autoconf
+automake -a -c
+%configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} bindir=$RPM_BUILD_ROOT%{_bindir} install
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	sysdir=%{_applnkdir}/Games/Board
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README COPYING ChangeLog dame.lsm
-%{_bindir}/dame
-%{_bindir}/checkers
-%{_bindir}/simplech
+%doc AUTHORS README ChangeLog dame.lsm
+%{_bindir}/*
 %{_mandir}/man6/dame.6*
-%{_pixmapsdir}/dame.png
-%dir %{_datadir}/pixmaps/dame
-%{_pixmapsdir}/dame/*.png
-%{_datadir}/apps/Games/dame.desktop
-%{_datadir}/locale/de/LC_MESSAGES/dame.mo
-%{_datadir}/locale/fr/LC_MESSAGES/dame.mo
+%{_pixmapsdir}/*
+%{_applnkdir}/Games/Board/dame.desktop
