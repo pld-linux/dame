@@ -45,7 +45,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix=$RPM_BUILD_ROOT%{_prefix} bindir=$RPM_BUILD_ROOT%{bindir} install
+%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} bindir=$RPM_BUILD_ROOT%{bindir} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
