@@ -5,7 +5,7 @@ Summary(fi):	Tammi peli
 Summary(pl):	Warcaby
 Name:		dame
 Version:	0.27
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Group(de):	X11/Applikationen/Spiele/Strategie
@@ -42,12 +42,12 @@ jeszcze trudniej pokonaæ.
 CFLAGS="%{rpmcflags}" \
 ./configure \
 	--prefix=%{_prefix} \
-	--bindir=%{bindir}
+	--bindir=%{_bindir}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} bindir=$RPM_BUILD_ROOT%{bindir} install
+%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} bindir=$RPM_BUILD_ROOT%{_bindir} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -55,9 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README COPYING ChangeLog dame.lsm
-%{_prefix}/games/dame
-%{_prefix}/games/checkers
-%{_prefix}/games/simplech
+%{_bindir}/dame
+%{_bindir}/checkers
+%{_bindir}/simplech
 %{_mandir}/man6/dame.6*
 %{_pixmapsdir}/dame.png
 %dir %{_datadir}/pixmaps/dame
