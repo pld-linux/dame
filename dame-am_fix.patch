@@ -1,0 +1,17 @@
+--- dame-0.27/dame.src/Makefile.am~	Thu Jan 21 12:58:10 1999
++++ dame-0.27/dame.src/Makefile.am	Fri Dec 14 05:29:34 2001
+@@ -29,12 +29,11 @@
+ appdir = $(datadir)/pixmaps
+ app_DATA = dame.png
+ 
+-mandir = $(prefix)/man/man6
+-man_DATA = dame.6
++man_MANS = dame.6
+ 
+ EXTRA_DIST =						\
+ 	dame.xpm					\
+ 	$(sys_DATA)					\
+ 	$(pix_DATA)                                     \
+ 	$(app_DATA)                                     \
+-	$(man_DATA)
++	$(man_MANS)
