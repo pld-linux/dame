@@ -5,12 +5,13 @@ Summary(fi):	Tammi peli
 Summary(pl):	Warcaby
 Name:		dame
 Version:	0.27
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	http://super.tacheles.de/~girbal/dame/%{name}-%{version}.tar.gz
 # Source0-md5:	80b3f49a32a34719e5448fa99086c739
 Patch0:		%{name}-am_fix.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://super.tacheles.de/~girbal/dame/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -40,6 +41,7 @@ jeszcze trudniej pokonaæ.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing acinclude.m4
@@ -56,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	sysdir=%{_applnkdir}/Games/Board
+	sysdir=%{_desktopdir}
 
 %find_lang %{name}
 
@@ -69,4 +71,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man6/dame.6*
 %{_pixmapsdir}/*
-%{_applnkdir}/Games/Board/dame.desktop
+%{_desktopdir}/*
