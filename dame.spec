@@ -7,7 +7,7 @@ Version:	0.27
 Release:	1
 Copyright:	GPL
 Group:		X11/Games/Strategy
-Source:		http://super.tacheles.de/~girbal/dame/dame-%{ver}.tar.gz
+Source:		http://super.tacheles.de/~girbal/dame/dame-%{version}.tar.gz
 Requires:	gnome-libs >= 0.30
 URL:		http://super.tacheles.de/~girbal/dame/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
