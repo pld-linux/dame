@@ -1,11 +1,13 @@
 Summary:	Dame lets you play checkers ala point and click
+Summary(cz):	Plán dáma
 Summary(de):	Spielen Sie Dame
-Summary(fr):	Jouez aux dames
 Summary(fi):	Tammi peli
+Summary(fr):	Jouez aux dames
+Summary(it):	Gioco di dama
 Summary(pl):	Warcaby
 Name:		dame
 Version:	0.27
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	http://super.tacheles.de/~girbal/dame/%{name}-%{version}.tar.gz
@@ -19,7 +21,6 @@ BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Dame lets you play at draughts in an X window. It comes with checkers,
