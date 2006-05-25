@@ -1,5 +1,5 @@
 Summary:	Dame lets you play checkers ala point and click
-Summary(cz):	Plán dáma
+Summary(cs):	Plán dáma
 Summary(de):	Spielen Sie Dame
 Summary(fi):	Tammi peli
 Summary(fr):	Jouez aux dames
