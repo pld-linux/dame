@@ -1,10 +1,10 @@
 Summary:	Dame lets you play checkers ala point and click
-Summary(cs.UTF-8):   Plán dáma
-Summary(de.UTF-8):   Spielen Sie Dame
-Summary(fi.UTF-8):   Tammi peli
-Summary(fr.UTF-8):   Jouez aux dames
-Summary(it.UTF-8):   Gioco di dama
-Summary(pl.UTF-8):   Warcaby
+Summary(cs.UTF-8):	Plán dáma
+Summary(de.UTF-8):	Spielen Sie Dame
+Summary(fi.UTF-8):	Tammi peli
+Summary(fr.UTF-8):	Jouez aux dames
+Summary(it.UTF-8):	Gioco di dama
+Summary(pl.UTF-8):	Warcaby
 Name:		dame
 Version:	0.27
 Release:	6
