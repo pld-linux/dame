@@ -1,10 +1,10 @@
 Summary:	Dame lets you play checkers ala point and click
-Summary(cs):	Plán dáma
-Summary(de):	Spielen Sie Dame
-Summary(fi):	Tammi peli
-Summary(fr):	Jouez aux dames
-Summary(it):	Gioco di dama
-Summary(pl):	Warcaby
+Summary(cs.UTF-8):   PlÃ¡n dÃ¡ma
+Summary(de.UTF-8):   Spielen Sie Dame
+Summary(fi.UTF-8):   Tammi peli
+Summary(fr.UTF-8):   Jouez aux dames
+Summary(it.UTF-8):   Gioco di dama
+Summary(pl.UTF-8):   Warcaby
 Name:		dame
 Version:	0.27
 Release:	6
@@ -26,18 +26,18 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Dame lets you play at draughts in an X window. It comes with checkers,
 a tricky opponent, and simplech, an even harder to beat opponent.
 
-%description -l de
+%description -l de.UTF-8
 Dame zeichnet ein Damebrett in ein X Fenster. Es kommt mit checkers,
 einem leichten, und simplech, einem schweren Gegner.
 
-%description -l fr
+%description -l fr.UTF-8
 Dame vous presente un damier graphique pour jouer aux dames contre
 l'ordinateur - en personne de checkers ou simplech.
 
-%description -l pl
-Dziêki dame mo¿na graæ w warcaby w X Window. W pakiecie jest
-szachownica, sprytny przeciwnik oraz simplech -- przeciwnik, którego
-jeszcze trudniej pokonaæ.
+%description -l pl.UTF-8
+DziÄ™ki dame moÅ¼na graÄ‡ w warcaby w X Window. W pakiecie jest
+szachownica, sprytny przeciwnik oraz simplech -- przeciwnik, ktÃ³rego
+jeszcze trudniej pokonaÄ‡.
 
 %prep
 %setup -q
